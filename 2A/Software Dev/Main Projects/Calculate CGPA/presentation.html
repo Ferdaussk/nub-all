@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+	<style>
+	body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+pre {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: Consolas, monospace;
+    color: #333;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
+
+/* Styling for code blocks */
+pre code {
+    display: block;
+    white-space: pre;
+}
+
+/* Styling for code comments */
+pre code .c {
+    color: green;
+}
+
+	</style>
+</head>
+<body>
+    <div class="container">
+        <h1>CGPA Calculator</h1>
+        <p>This program calculates the Cumulative Grade Point Average (CGPA) for three subjects based on the marks obtained. It then displays the CGPA for each subject along with the total CGPA.</p>
+        <h2>How It Works</h2>
+        <ol>
+            <li>User inputs marks for three subjects (out of 100).</li>
+            <li>For each subject, the program calculates CGPA using predefined criteria.</li>
+            <li>The CGPA for each subject is displayed along with the result (Pass/Fail).</li>
+            <li>The total CGPA is calculated as the average of CGPA for all subjects.</li>
+            <li>The total CGPA is displayed along with the result (Pass/Fail).</li>
+        </ol>
+        <h2>Code Explanation</h2>
+        <p>The provided C code consists of functions to calculate CGPA for a subject and to print the result. In the main function, it takes input for three subjects, calculates CGPA for each, and then calculates the total CGPA.</p>
+        <h3>Function: calculateSubjectCGPA()</h3>
+        <p>This function calculates the CGPA for a given subject based on the marks obtained.</p>
+        <pre><code class="c">
+#include &lt;stdio.h&gt;
+
+// Calculate CGPA for a subject
+float calculateSubjectCGPA(int marks) {
+    if (marks >= 90 && marks <= 100) {
+        return 4.0;  // Highest grade
+    } else if (marks >= 80 && marks < 90) {
+        return 3.7;
+    } else if (marks >= 70 && marks < 80) {
+        return 3.3;
+    } else if (marks >= 60 && marks < 70) {
+        return 3.0;
+    } else if (marks >= 50 && marks < 60) {
+        return 2.7;
+    } else if (marks >= 40 && marks < 50) {
+        return 2.3;
+    } else {
+        return 0.0; // Returning 0.0 for failing marks
+    }
+}
+        </code></pre>
+        <h3>Function: printSubjectResult()</h3>
+        <p>This function prints the CGPA for a subject along with the subject name and whether the student has passed or failed.</p>
+        <pre><code class="c">
+// Print subject result
+void printSubjectResult(const char* subjectName, float cgpa) {
+    printf("CGPA for %s: %.2f", subjectName, cgpa);
+    if (cgpa < 2.0) {
+        printf(" - Fail"); // If CGPA is less than 2.0, student fails
+    }
+    printf("\n");
+}
+        </code></pre>
+        <h3>Main Function: main()</h3>
+        <p>The main function orchestrates the entire process, taking input, calculating CGPA, and displaying the results.</p>
+        <pre><code class="c">
+int main() {
+    int marks_subject1, marks_subject2, marks_subject3;
+
+    // Each subject input
+    printf("Enter marks for subject 1 (out of 100): ");
+    scanf("%d", &marks_subject1);
+
+    printf("Enter marks for subject 2 (out of 100): ");
+    scanf("%d", &marks_subject2);
+
+    printf("Enter marks for subject 3 (out of 100): ");
+    scanf("%d", &marks_subject3);
+
+    // Calculate each subject
+    float cgpa_subject1 = calculateSubjectCGPA(marks_subject1);
+    float cgpa_subject2 = calculateSubjectCGPA(marks_subject2);
+    float cgpa_subject3 = calculateSubjectCGPA(marks_subject3);
+
+    // Display CGPA for each subject and total
+    printSubjectResult("Subject 1", cgpa_subject1);
+    printSubjectResult("Subject 2", cgpa_subject2);
+    printSubjectResult("Subject 3", cgpa_subject3);
+
+    float total_cgpa = (cgpa_subject1 + cgpa_subject2 + cgpa_subject3) / 3;
+
+    // Display total CGPA
+    printf("\nTotal CGPA: %.2f", total_cgpa);
+    if (total_cgpa < 2.0) {
+        printf(" - Fail"); // If total CGPA is less than 2.0, student fails
+    }
+    printf("\n");
+
+    return 0;
+}
+        </code></pre>
+        <h2>Result</h2>
+        <!-- Output of the program will be displayed here -->
+    </div>
+</body>
+</html>
