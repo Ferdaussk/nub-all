@@ -17,7 +17,7 @@ float calculateSubjectCGPA(int marks) {
     } else if (marks >= 40 && marks < 50) {
         return 2.3;
     } else {
-        return 0.0; // Returning 0.0 for failing marks
+        return 0.0; // Returning 0.0 for fail
     }
 }
 

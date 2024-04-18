@@ -20,6 +20,13 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+		.name-of-institute{
+            color: #007bff; /* Blue color */
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
 
         h1, h2, h3 {
             color: #333;
@@ -48,6 +55,41 @@
         ol li {
             margin-bottom: 10px;
         }
+		ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .developer-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .developer-info h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .developer-info ul {
+            padding-left: 20px;
+        }
+
+        .developer-info li {
+            margin-bottom: 8px;
+        }
+
+        /* Style to add separation after every third item */
+        .developer-info ul li:nth-child(3n + 4) {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
 
         /* Styling for code blocks */
         pre code {
@@ -64,9 +106,24 @@
 </head>
 <body>
 <div class="container">
+	<h1 class="name-of-institute">Northern University Bangladesh</h1>
     <h1>CGPA Calculator</h1>
     <p>This program calculates the Cumulative Grade Point Average (CGPA) for a variable number of subjects based on the marks obtained. It then displays the CGPA for each subject along with the total CGPA and overall result (Pass/Fail).</p>
-    <h2>How It Works</h2>
+    <div class="developer-info">
+        <h2>Developers Information</h2>
+        <ul>
+            <li><strong>Name:</strong> MD Jannat Ferdaus</li>
+            <li><strong>ID:</strong> 42230301042</li>
+            <li><strong>Section:</strong> 2A</li>
+            <li><strong>Name:</strong> MD Nahid Hasan Roky</li>
+            <li><strong>ID:</strong> 42230301040</li>
+            <li><strong>Section:</strong> 2A</li>
+            <li><strong>Name:</strong> Abdul Momin</li>
+            <li><strong>ID:</strong> 42230301041</li>
+            <li><strong>Section:</strong> 2A</li>
+        </ul>
+    </div>
+	<h2>How It Works</h2>
     <ol>
         <li>User inputs the number of subjects and their respective marks (out of 100).</li>
         <li>For each subject, the program calculates the CGPA using predefined criteria.</li>
