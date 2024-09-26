@@ -1,3 +1,7 @@
+
+Assignment Name: E-commerce Product Catalog
+
+
 -- Create Tables
 -- Products Table
 CREATE TABLE Products (
